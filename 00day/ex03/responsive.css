@@ -1,0 +1,87 @@
+table {
+	width:90vw;
+	height:80vh;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:#f8f8f8;
+	border-spacing:1px;
+}
+h1 {
+	font-size: 3vw;
+}
+img {
+	width: 25vw;
+}
+td {
+	width:5%;
+	padding-top: auto;
+}
+.num {
+	float: left;
+	font-size: 0.8vw;
+	margin: 0;
+}
+.add_table {
+	width:80%;
+	height:10%;
+	text-align: left;
+	font-size: 0.8vw;
+	padding: 20px;
+}
+.element {
+	text-align: center;
+	font-size: 1.2vw;
+	font-weight: bold;
+	margin: 0.5vw;
+}
+.atomic_weight {
+	float: right;
+	font-size: 0.8vw;
+	margin: 0;
+}
+.alkalimetal {
+	background-color: #ff6666;
+}
+.alkalineearthmetal {
+	background-color: #fedead;
+}
+.lanthanide {
+	background-color: #ffbffe;
+}
+.actinide {
+	background-color: #ff99cb;
+}
+.transitionmetal{
+	background-color: #ffc0bf;
+}
+.post-transitionmetal {
+	background-color: #cccccc;
+}
+.metalloid {
+	background-color: #cccc9a;
+}	
+.nonmetal {
+	background-color: #f0ff8f;
+}
+.noblegas {
+	background-color: #c1feff;
+}
+.podgroup {
+	font-size:80%;
+	line-height:125%;
+	vertical-align:top;
+}
+.podgroup td {
+	font-size: 1vw;
+}
+.unknownchemicalproperties {
+	background-color: #e8e8e8;
+}
+#space {
+	height: 3vw;
+}
+@media only screen and (max-width: 760px) {
+	.podgroup {
+		display: none;
+	}
+}
