@@ -23,8 +23,9 @@
 		}
 		$users[] = $new_user;
 		file_put_contents($file, serialize($users));
+		header('Location: index.html');
 		echo "OK\n";
 	} else {
 		error_message();
 	}
-?>
+	?>
