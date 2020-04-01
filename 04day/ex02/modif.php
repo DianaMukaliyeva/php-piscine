@@ -11,23 +11,14 @@
 			error_message();
 		}
 		$users = unserialize(file_get_contents($file));
-		$user_found = false;
-		foreach($users as $user) {
-			if ($user['login'] === $_POST['login']) {
-				if ($user['passwd'] === hash('whirlpool', $_POST['oldpw'])) {
-					$user_found = true;
-					$user['passwd'] = hash('whirlpool', $_POST['newpw']);
-				} else {
-					error_message();
-				}
+		foreach($users as $key => $user) {
+			if ($user['login'] === $_POST['login'] && $user['passwd'] === hash('whirlpool', $_POST['oldpw'])) {
+				$users[$key]['passwd'] = hash('whirlpool', $_POST['newpw']);
+				file_put_contents($file, serialize($users));
+				echo "OK\n";
+				exit();
 			}
 		}
-		if (!$user_found) {
-			error_message();
-		}
-		file_put_contents($file, serialize($users));
-		echo "OK\n";
-	} else {
-		error_message();
 	}
+	error_message();
 ?>
