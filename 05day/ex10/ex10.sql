@@ -1,4 +1,7 @@
-SELECT title AS Title, summary AS Summary, prod_year
+SELECT
+	title AS Title,
+	summary AS Summary,
+	prod_year
 FROM film
 INNER JOIN genre ON film.id_genre = film.id_genre
 WHERE genre.name = 'erotic'
