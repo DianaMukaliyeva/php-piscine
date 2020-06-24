@@ -29,7 +29,16 @@
 		"5" => ["mai","Mai"], "6" => ["juin","Juin"] , "7" => ["juillet","Juillet"], "8" => ["août","Août","Aout","aout"], "9" => ["septembre","Septembre"],
 		"10" => ["octobre","Octobre"], "11" => ["novembre","Novembre"], "12" => ["décembre","Décembre","Decembre","decembre"]);
 		$day = get_key($array[0], $days);
+		$date = $array[1];
 		$month = get_key($array[2], $months);
+		$year = $array[3];
+		$time = explode(":", $array[4]);
+		// print_r($time);
+		if (count($time) != 3 || $date < 1 || $date > 31 || $year < 1970 ||
+			(!preg_match('/^([0-9]){2}$/', $time[0]) || $time[0] < 0 || $time[0] > 23) ||
+			(!preg_match('/^([0-9]){2}$/', $time[1]) || $time[1] < 0 || $time[1] > 59) ||
+			(!preg_match('/^([0-9]){2}$/', $time[2]) || $time[2] < 0 || $time[2] > 59))
+			error();
 		$real_day = date('w', strtotime($array[3]."-".$month."-".$array[1]." ".$array[4]));
 		if ($real_day != $day || !checkdate($month, $array[1], $array[3]))
 			error();
