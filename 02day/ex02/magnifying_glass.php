@@ -1,17 +1,14 @@
 #!/usr/bin/php
 <?php
-	if($argc == 2 && file_exists($argv[1]))
-	{
-		$file_arr = file($argv[1]);
-		foreach($file_arr as $str)
-		{
-			if (preg_match('/(<a.*>.*<\/a>)/', $str, $match) != 0)
-			{
-				preg_match_all('([\'"].*?[\'"]|[\>].*?[\<])', $match[0], $matches1);
-				foreach ($matches1[0] as $needle)
-					$str = str_replace($needle, strtoupper($needle), $str);
-			}
-			echo "$str";
-		}
+	function upp_links($matches) {
+		$res = $matches[0];
+		$res = preg_replace_callback("/title=\"(.*?)\"/is", function ($text) { return "title=\"".strtoupper($text[1])."\""; }, $res);
+		$res = preg_replace_callback("/>.+?</s", function ($text) { return strtoupper($text[0]); }, $res);
+		return $res;
+	}
+	if($argc == 2 && file_exists($argv[1])) {
+		$page = file_get_contents($argv[1]);
+		$page = preg_replace_callback("/<a.*?<\/a>/is", "upp_links", $page);
+		echo $page;
 	}
 ?>
