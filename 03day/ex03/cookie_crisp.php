@@ -5,7 +5,7 @@
 			setcookie($vars["name"], $vars["value"], time() + (60 * 60 * 24 * 30), '/');
 			break;
 		case "get":
-			if (!empty($vars["name"]) && !isset($vars["value"]))
+			if (!empty($vars["name"]))
 			{
 				$name = $vars["name"];
 				if(isset($_COOKIE[$name]))
