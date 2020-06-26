@@ -3,7 +3,7 @@
 		if (!$login || !$passwd) {
 			return FALSE;
 		}
-		$file = '../../private/passwd';
+		$file = '../htdocs/private/passwd';
 		$users = unserialize(file_get_contents($file));
 		foreach($users as $user) {
 			if ($user['login'] === $login && $user['passwd'] === hash('whirlpool', $passwd)) {

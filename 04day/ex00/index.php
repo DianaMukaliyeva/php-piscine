@@ -4,10 +4,6 @@
 		$_SESSION['login'] = $_GET['login'];
 		$_SESSION['passwd'] = $_GET['passwd'];
 	}
-	if (!isset($_SESSION['login'])){
-		$_SESSION['login'] = "";
-		$_SESSION['passwd'] = "";
-	}
 ?>
 <html><body>
 	<form  action = "index.php" method="GET">

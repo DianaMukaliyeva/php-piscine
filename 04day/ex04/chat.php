@@ -3,7 +3,7 @@
 	if (!($_SESSION['loggued_on_user']))
 		echo "ERROR\n";
 	else {
-		$file = '../../private/chat';
+		$file = '../htdocs/private/chat';
 		if (file_exists($file)) {
 			$messages = unserialize(file_get_contents($file));
 			foreach ($messages as $msg) {

@@ -6,7 +6,7 @@
 
 	session_start();
 	if (isset($_POST['submit']) && $_POST['submit'] == 'OK' && $_POST['oldpw'] && $_POST['newpw'] && $_POST['login']) {
-		$file = '../../private/passwd';
+		$file = '../htdocs/private/passwd';
 		if (!file_exists($file)) {
 			error_message();
 		}

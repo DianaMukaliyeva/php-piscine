@@ -6,7 +6,7 @@
 		exit();
 	}
 	if (isset($_POST['msg'])) {
-		$file = '../../private/chat';
+		$file = '../htdocs/private/chat';
 		if (!file_exists($file)) {
 			file_put_contents($file, null);
 		}
