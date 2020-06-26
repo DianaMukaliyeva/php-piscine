@@ -12,9 +12,9 @@
 	}
 ?>
 <html><body>
-	<form>
-		<iframe name="chat" src="chat.php" width="100%" height="550px"></iframe>
-		<iframe name="speak" src="speak.php" width="100%" height="50px"></iframe>
-		<input name="logout" formaction="logout.php" type="submit" value="Log out"/>
-	</form>
+<form>
+	<iframe name="chat" src="chat.php" width="100%" height="550px"></iframe>
+	<iframe name="speak" src="speak.php" width="100%" height="50px"></iframe>
+	<input name="logout" formaction="logout.php" type="submit" value="Log out"/>
+</form>
 </body></html>
