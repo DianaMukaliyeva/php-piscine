@@ -2,7 +2,8 @@
 	$vars = $_GET;
 	switch ($vars["action"]) {
 		case "set":
-			setcookie($vars["name"], $vars["value"], time() + (60 * 60 * 24 * 30), '/');
+			if ($vars["name"] && $vars["value"])
+				setcookie($vars["name"], $vars["value"], time() + (60 * 60 * 24 * 30), '/');
 			break;
 		case "get":
 			if ($vars["name"]) {
@@ -12,9 +13,8 @@
 			}
 			break;
 		case "del":
-			if ($vars["name"] && $vars["value"]) {
+			if ($vars["name"] && $vars["value"])
 				setcookie($vars["name"], "", time() - 3600);
-			}
 			break;
 	}
 ?>
