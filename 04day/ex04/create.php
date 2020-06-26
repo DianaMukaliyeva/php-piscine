@@ -1,11 +1,6 @@
 <?php
-	function error_message() {
-		echo "ERROR\n";
-		exit();
-	}
-
 	session_start();
-	if (isset($_POST['submit']) && $_POST['submit'] == 'OK' && $_POST['passwd'] && $_POST['login']) {
+	if ($_POST['submit'] && $_POST['submit'] == 'OK' && $_POST['passwd'] && $_POST['login']) {
 		$new_user = array('login' => $_POST['login'], 'passwd' => hash('whirlpool', $_POST['passwd']));
 		$path = '../htdocs/private';
 		$file = $path . '/passwd';
@@ -14,19 +9,23 @@
 		if (!file_exists($path))
 			mkdir($path);
 		$users = [];
-		if (file_exists($file)) {
+		$user_exists = false;
+		if (file_exists($file))
 			$users = unserialize(file_get_contents($file));
-		}
 		foreach($users as $user) {
 			if ($user['login'] === $new_user['login']) {
-				error_message();
+				echo "ERROR\n";
+				$user_exists = true;
+				break;
 			}
 		}
-		$users[] = $new_user;
-		file_put_contents($file, serialize($users));
-		header('Location: index.html');
-		echo "OK\n";
+		if (!$user_exists) {
+			$users[] = $new_user;
+			file_put_contents($file, serialize($users));
+			echo "OK\n";
+			header('Location: index.html');
+		}
 	} else {
-		error_message();
+		echo "ERROR\n";
 	}
 	?>
