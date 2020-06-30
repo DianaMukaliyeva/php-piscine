@@ -13,7 +13,7 @@
 			}
 			break;
 		case "del":
-			if ($vars["name"] && $vars["value"])
+			if ($vars["name"])
 				setcookie($vars["name"], "", time() - 3600);
 			break;
 	}
