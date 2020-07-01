@@ -1,0 +1,31 @@
+
+<- Vertex ----------------------------------------------------------------------
+The Vertex class handles vertexes.
+
+An instance can be contructed from mandatory x, y, z coordinates
+and optional w coordinate and an instance of Color class:
+new Vertex( array( 'x' => 1.0, 'y' => 0.0, 'z' => 0.0 ) );
+
+Default value of w coordinate is 1.0.
+Default value of Color instance is white.
+
+x, y, z and optional w constitutives are converted to floats.
+Any other use is undefined behaviour.
+
+The attributes are private.
+
+The class provides the following methods :
+Get methods for attributes:
+float   getX();
+float   getY();
+float   getZ();
+float   getW();
+Color   getColor();
+
+Set methods for attributes:
+float   setX();
+float   setY();
+float   setZ();
+float   setW();
+Color   setColor();
+---------------------------------------------------------------------- Vertex ->
