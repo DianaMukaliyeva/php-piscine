@@ -2,7 +2,7 @@
     require_once('Color.class.php');
 
     class Vertex {
-        public static bool $verbose = false;
+        public static $verbose = false;
 
         public static function doc() {
             $file = get_class() . '.doc.txt';
@@ -11,11 +11,11 @@
             return 'File doesn\'t exists';
         }
 
-        private float $_x = 0;
-        private float $_y = 0;
-        private float $_z = 0;
-        private float $_w = 1.0;
-        private Color $_color;
+        private $_x = 0;
+        private $_y = 0;
+        private $_z = 0;
+        private $_w = 1.0;
+        private $_color;
 
         public function __construct($args=[]) {
             $this->setX((float)$args['x']);

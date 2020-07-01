@@ -1,6 +1,6 @@
 <?php
     class Vector {
-        public static bool $verbose = false;
+        public static $verbose = false;
 
         public static function doc() {
             $file = get_class() . '.doc.txt';
@@ -9,10 +9,10 @@
             return 'File doesn\'t exists';
         }
 
-        private float $_x;
-        private float $_y;
-        private float $_z;
-        private float $_w;
+        private $_x;
+        private $_y;
+        private $_z;
+        private $_w;
 
         public function __construct($args=[]) {
             $dest = $args['dest'];

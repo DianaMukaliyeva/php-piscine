@@ -1,6 +1,6 @@
 <?php
     class Color {
-        public static bool $verbose = false;
+        public static $verbose = false;
 
         public static function doc() {
             $file = get_class() . '.doc.txt';
@@ -9,9 +9,9 @@
             return 'File doesn\'t exists';
         }
 
-        public int $red = 0;
-        public int $green = 0;
-        public int $blue = 0;
+        public $red = 0;
+        public $green = 0;
+        public $blue = 0;
 
         public function __construct($args=[]) {
             if (isset($args['rgb'])) {
