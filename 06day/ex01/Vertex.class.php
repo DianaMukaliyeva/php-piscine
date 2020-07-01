@@ -1,4 +1,6 @@
 <?php
+    require_once('Color.class.php');
+
     class Vertex {
         public static bool $verbose = false;
 
