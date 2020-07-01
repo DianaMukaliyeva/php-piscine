@@ -2,6 +2,13 @@
     class Color {
         public static bool $verbose = false;
 
+        public static function doc() {
+            $file = get_class() . '.doc.txt';
+            if (file_exists($file))
+                return file_get_contents($file);
+            return 'File doesn\'t exists';
+        }
+
         public int $red = 0;
         public int $green = 0;
         public int $blue = 0;
@@ -28,13 +35,6 @@
 
         public function __toString() {
             return sprintf("%s( red: %3d, green: %3d, blue: %3d )", get_class(), $this->red, $this->green, $this->blue);
-        }
-
-        public static function doc() {
-            $file = get_class() . '.doc.txt';
-            if (file_exists($file))
-                return file_get_contents($file);
-            return 'File doesn\'t exists';
         }
 
         public function add($inst) {
