@@ -1,9 +1,9 @@
 <?php
-    class Tyrion extends Lannister{
+    class Tyrion extends Lannister {
         private $no = "Not even if I'm drunk !";
         private $yes = "Let's do this.";
 
-        public function sleepWith($person){
+        public function sleepWith($person) {
             if (get_class($person) == 'Jaime')
                 print($this->no . PHP_EOL);
             if (get_class($person) == 'Sansa')

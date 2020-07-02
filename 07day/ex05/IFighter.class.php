@@ -1,5 +1,5 @@
 <?php
-    interface iFighter{
+    interface iFighter {
         public function fight();
     }
 ?>
