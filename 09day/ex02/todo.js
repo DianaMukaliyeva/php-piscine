@@ -1,10 +1,10 @@
 let cookies = document.cookie.split(';');
-let i = document.cookie ? cookies.length : 0;
+let id = document.cookie ? cookies.length : 0;
 
-if (document.cookie) {
-    cookies.forEach((element, index) => {
-        i = element.split('=')[0].trim();
-        addToDom(element.split('=')[1], i);
+if (id > 0) {
+    cookies.forEach((element) => {
+        id = element.split('=')[0].trim();
+        addToDom(element.split('=')[1], id);
     });
 }
 
@@ -12,9 +12,9 @@ document.getElementById('new').addEventListener('click', e => {
     e.preventDefault();
     const task = prompt("Your new task is:")
     if (task && task.trim()) {
-        i++;
-        addToDom(task, i);
-        document.cookie = i + "=" + task;
+        id++;
+        addToDom(task, id);
+        document.cookie = id + "=" + task;
     }
 })
 
