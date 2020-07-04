@@ -26,10 +26,11 @@
     <div id="balloon"></div>
     <script>
         const colors = ['red', 'green', 'blue'];
+        let balloon = $('#balloon');
         let size = 200;
         let color = 0;
 
-        $('#balloon').click(() => {
+        balloon.click(() => {
             size += 10;
             if (size > 420) {
                 size = 200;
@@ -41,7 +42,7 @@
             changeSize(size, color);
         })
 
-        $('#balloon').mouseout(() => {
+        balloon.mouseout(() => {
             size -= 5;
             if (size < 200) {
                 size = 200;
@@ -54,9 +55,9 @@
         })
 
         function changeSize(size, color) {
-            balloon.style.width = size + 'px';
-            balloon.style.height = size + 'px';
-            balloon.style.backgroundColor = colors[color];
+            balloon.css('width',size + 'px');
+            balloon.css('height',size + 'px');
+            balloon.css('background-color', colors[color]);
         }
     </script>
 </body>
